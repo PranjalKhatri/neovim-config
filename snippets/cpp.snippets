@@ -1,0 +1,63 @@
+# ~/.config/nvim/snippets/cpp.snippets
+
+# C++ Boilerplate
+snippet boiler
+    #include <iostream>
+    #include <vector>
+    #include<cstdint>
+    #include<set>
+    #include<map>
+    #include<unordered_map>
+    #define ll long long
+    #define pii pair<int,int>
+    #define get_vector(x,n)for(int i = 0;i < n; ++i)cin>>x[i];
+    #define all(x) (x).begin(),(x).end()
+    long combi(int n,int k)
+    {
+        if(k >n)return 0;
+        long ans=1;
+        k=k>n-k?n-k:k;
+        int j=1;
+        for(;j<=k;j++,n--)
+        {
+            if(n%j==0)
+            {
+                ans*=n/j;
+            }else
+            if(ans%j==0)
+            {
+                ans=ans/j*n;
+            }else
+            {
+                ans=(ans*n)/j;
+            }
+        }
+        return ans;
+    }
+    using namespace std;
+    
+    void compute()
+    {
+        ${0: //Good Luck}
+    }
+
+    int main() 
+    {
+        #ifdef dir_io
+        freopen("input.txt", "r", stdin);
+        freopen("output.txt", "w", stdout);
+        #endif
+        ios_base::sync_with_stdio(0);
+        cin.tie(0);
+        cout.tie(0);
+
+        int t = 1;
+        ${1}cin>>t;
+        while(t--)
+        {
+            compute();
+        }
+        
+        return 0;
+    }
+
