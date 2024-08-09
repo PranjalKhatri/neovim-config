@@ -7,13 +7,18 @@ snippet boiler
     #include<cstdint>
     #include<set>
     #include<map>
+    #include <algorithm>
     #include<unordered_map>
     using namespace std;
 
     #define ll long long
     #define pii pair<int,int>
+    #define vi vector<int>
     #define get_vector(x,n)for(int i = 0;i < n; ++i)cin>>x[i];
+    #define print_vector(x)for(auto &i : (x))cout<<i<<" ";
     #define all(x) (x).begin(),(x).end()
+    #define rep(i,m,n) for(int i = m;i < n;++i)
+    #define res(i,m,n) for(int i = m;i >= n;--i)
     const ll mod = 1e9 + 7;
     //combination template   
     //this is power mod and not simple power
@@ -25,7 +30,7 @@ snippet boiler
             return a;
         else
         {
-            ll x = power(a, b / 2);
+            ll x = modpower(a, b / 2);
             ll y = x * x;
             y %= mod;
             // if(b%2!=0) return y*a;
